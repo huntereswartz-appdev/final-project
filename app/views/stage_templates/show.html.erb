@@ -1,0 +1,84 @@
+<h1>
+  Stage #<%= @stage.id %> details
+</h1>
+
+<a href="/stages/<%= @stage.id %>/edit">
+  Edit stage
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    User
+  </dt>
+  <dd>
+    <%= @stage.user_id %>
+  </dd>
+
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @stage.name %>
+  </dd>
+
+  <dt>
+    Number
+  </dt>
+  <dd>
+    <%= @stage.number %>
+  </dd>
+
+  <dt>
+    Number of deals
+  </dt>
+  <dd>
+    <%= @stage.number_of_deals %>
+  </dd>
+
+  <dt>
+    Total days
+  </dt>
+  <dd>
+    <%= @stage.total_days %>
+  </dd>
+
+  <dt>
+    Active days
+  </dt>
+  <dd>
+    <%= @stage.active_days %>
+  </dd>
+
+  <dt>
+    Probability deal closes
+  </dt>
+  <dd>
+    <%= @stage.probability_deal_closes %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@stage.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@stage.updated_at) %> ago
+  </dd>
+</dl>
+
+<a href="/delete_stage/<%= @stage.id %>">
+  Delete stage
+</a>
+
+<hr>
+
+<a href="/stages">
+  Go back
+</a>

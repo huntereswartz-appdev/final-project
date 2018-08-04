@@ -1,0 +1,89 @@
+<!-- Validation failure messages -->
+<% if @stage.errors.any? %>
+  <% @stage.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit stage #<%= @stage.id %>
+</h1>
+
+<hr>
+
+<form action="/update_stage/<%= @stage.id %>" method="post">
+  <!-- Label and input for user_id -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @stage.user_id %>">
+  </div>
+
+  <!-- Label and input for name -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control" value="<%= @stage.name %>">
+  </div>
+
+  <!-- Label and input for number -->
+  <div class="form-group">
+    <label for="number">
+      Number
+    </label>
+
+    <input type="text" id="number" name="number" class="form-control" value="<%= @stage.number %>">
+  </div>
+
+  <!-- Label and input for number_of_deals -->
+  <div class="form-group">
+    <label for="number_of_deals">
+      Number of deals
+    </label>
+
+    <input type="text" id="number_of_deals" name="number_of_deals" class="form-control" value="<%= @stage.number_of_deals %>">
+  </div>
+
+  <!-- Label and input for total_days -->
+  <div class="form-group">
+    <label for="total_days">
+      Total days
+    </label>
+
+    <input type="text" id="total_days" name="total_days" class="form-control" value="<%= @stage.total_days %>">
+  </div>
+
+  <!-- Label and input for active_days -->
+  <div class="form-group">
+    <label for="active_days">
+      Active days
+    </label>
+
+    <input type="text" id="active_days" name="active_days" class="form-control" value="<%= @stage.active_days %>">
+  </div>
+
+  <!-- Label and input for probability_deal_closes -->
+  <div class="form-group">
+    <label for="probability_deal_closes">
+      Probability deal closes
+    </label>
+
+    <input type="text" id="probability_deal_closes" name="probability_deal_closes" class="form-control" value="<%= @stage.probability_deal_closes %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update stage
+  </button>
+</form>
+
+<hr>
+
+<a href="/stages">
+  Go back
+</a>
