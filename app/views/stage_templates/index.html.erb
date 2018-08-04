@@ -19,11 +19,11 @@
     </th>
 
     <th>
-      Name
+      Stage #
     </th>
 
     <th>
-      Number
+      Name
     </th>
 
     <th>
@@ -42,14 +42,7 @@
       Probability deal closes
     </th>
 
-    <th>
-      Created at
-    </th>
-
-    <th>
-      Updated at
-    </th>
-
+    
     <th>
     </th>
   </tr>
@@ -65,11 +58,11 @@
     </td>
 
     <td>
-      <%= stage.name %>
+      <%= stage.number %>
     </td>
 
     <td>
-      <%= stage.number %>
+      <%= stage.name %>
     </td>
 
     <td>
@@ -85,15 +78,7 @@
     </td>
 
     <td>
-      <%= stage.probability_deal_closes %>
-    </td>
-
-    <td>
-      <%= time_ago_in_words(stage.created_at) %> ago
-    </td>
-
-    <td>
-      <%= time_ago_in_words(stage.updated_at) %> ago
+      <%= number_to_percentage(stage.probability_deal_closes*100, precision: 0) %>
     </td>
 
     <td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180804160557) do
+ActiveRecord::Schema.define(version: 20180804165804) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 20180804160557) do
     t.string "name"
     t.integer "number"
     t.integer "number_of_deals"
-    t.integer "total_days"
-    t.integer "active_days"
+    t.float "total_days"
+    t.float "active_days"
     t.float "probability_deal_closes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

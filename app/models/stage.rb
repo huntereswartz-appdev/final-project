@@ -7,8 +7,8 @@
 #  name                    :string
 #  number                  :integer
 #  number_of_deals         :integer
-#  total_days              :integer
-#  active_days             :integer
+#  total_days              :float
+#  active_days             :float
 #  probability_deal_closes :float
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null

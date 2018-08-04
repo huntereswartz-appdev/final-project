@@ -20,7 +20,14 @@ Rails.application.routes.draw do
 
   get("/", { :controller => "stages", :action => "index" })
   
+  #------------------------------
   
+  #Routes for Sales Plan
+  
+  # READ
+  get("/plan", { :controller => "plan", :action => "index" })
+
+
   
   
   
