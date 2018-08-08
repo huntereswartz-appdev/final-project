@@ -1,0 +1,89 @@
+<!-- Validation failure messages -->
+<% if @goal.errors.any? %>
+  <% @goal.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit goal #<%= @goal.id %>
+</h1>
+
+<hr>
+
+<form action="/update_goal/<%= @goal.id %>" method="post">
+  <!-- Label and input for user_id -->
+  <div class="form-group">
+    <label for="user_id">
+      User ID
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @goal.user_id %>">
+  </div>
+  
+  <!-- Label and input for sales_goal -->
+  <div class="form-group">
+    <label for="sales_goal">
+      Sales goal
+    </label>
+
+    <input type="text" id="sales_goal" name="sales_goal" class="form-control" value="<%= @goal.sales_goal %>">
+  </div>
+
+  <!-- Label and input for sales_goal_period -->
+  <div class="form-group">
+    <label for="sales_goal_period">
+      Sales goal period
+    </label>
+
+    <input type="text" id="sales_goal_period" name="sales_goal_period" class="form-control" value="<%= @goal.sales_goal_period %>">
+  </div>
+
+  <!-- Label and input for period_end -->
+  <div class="form-group">
+    <label for="period_end">
+      Period end
+    </label>
+
+    <input type="text" id="period_end" name="period_end" class="form-control" value="<%= @goal.period_end %>">
+  </div>
+
+  <!-- Label and input for average_deal_size -->
+  <div class="form-group">
+    <label for="average_deal_size">
+      Average deal size
+    </label>
+
+    <input type="text" id="average_deal_size" name="average_deal_size" class="form-control" value="<%= @goal.average_deal_size %>">
+  </div>
+
+  <!-- Label and input for period_closed_deal_value -->
+  <div class="form-group">
+    <label for="period_closed_deal_value">
+      Period closed deal value
+    </label>
+
+    <input type="text" id="period_closed_deal_value" name="period_closed_deal_value" class="form-control" value="<%= @goal.period_closed_deal_value %>">
+  </div>
+
+  <!-- Label and input for pipeline_stages -->
+  <div class="form-group">
+    <label for="pipeline_stages">
+      Pipeline stages
+    </label>
+
+    <input type="text" id="pipeline_stages" name="pipeline_stages" class="form-control" value="<%= @goal.pipeline_stages %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update goal
+  </button>
+</form>
+
+<hr>
+
+<a href="/goals">
+  Go back
+</a>

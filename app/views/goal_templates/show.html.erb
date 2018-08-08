@@ -1,0 +1,77 @@
+<h1>
+  Goal #<%= @goal.id %> details
+</h1>
+
+<a href="/goals/<%= @goal.id %>/edit">
+  Edit goal
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Sales goal
+  </dt>
+  <dd>
+    <%= @goal.sales_goal %>
+  </dd>
+
+  <dt>
+    Sales goal period
+  </dt>
+  <dd>
+    <%= @goal.sales_goal_period %>
+  </dd>
+
+  <dt>
+    Period end
+  </dt>
+  <dd>
+    <%= @goal.period_end %>
+  </dd>
+
+  <dt>
+    Average deal size
+  </dt>
+  <dd>
+    <%= @goal.average_deal_size %>
+  </dd>
+
+  <dt>
+    Period closed deal value
+  </dt>
+  <dd>
+    <%= @goal.period_closed_deal_value %>
+  </dd>
+
+  <dt>
+    Pipeline stages
+  </dt>
+  <dd>
+    <%= @goal.pipeline_stages %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@goal.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@goal.updated_at) %> ago
+  </dd>
+</dl>
+
+<a href="/delete_goal/<%= @goal.id %>">
+  Delete goal
+</a>
+
+<hr>
+
+<a href="/goals">
+  Go back
+</a>

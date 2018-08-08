@@ -1,0 +1,93 @@
+<h1>
+  All goals
+</h1>
+
+<a href="/goals/new">
+  Add a new goal
+</a>
+
+<hr>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">
+      User ID
+    </th>
+    
+    <th scope="col">
+      ID
+    </th>
+
+    <th scope="col">
+      Sales goal
+    </th>
+
+    <th scope="col">
+      Sales goal period
+    </th>
+
+    <th scope="col">
+      Period end
+    </th>
+
+    <th scope="col">
+      Average deal size
+    </th>
+
+    <th scope="col">
+      Period closed deal value
+    </th>
+
+    <th scope="col">
+      Pipeline stages
+    </th>
+
+    <th scope="col">
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <% @goals.each do |goal| %>
+  <tr class="table-light">
+    <td>
+      <%= goal.user_id %>
+    </td>
+    <td>
+      <%= goal.id %>
+    </td>
+
+    <td>
+      <%= number_to_currency(goal.sales_goal, precision:0) %>
+    </td>
+
+    <td>
+      <%= goal.sales_goal_period %>
+    </td>
+
+    <td>
+      <%= goal.period_end %>
+    </td>
+
+    <td>
+      <%= number_to_currency(goal.average_deal_size, precision:0) %>
+    </td>
+
+    <td>
+      <%= number_to_currency(goal.period_closed_deal_value, precision:0) %>
+    </td>
+
+    <td>
+      <%= goal.pipeline_stages %>
+    </td>
+
+    <td>
+      <a href="/goals/<%= goal.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+

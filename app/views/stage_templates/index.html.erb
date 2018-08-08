@@ -8,47 +8,50 @@
 
 <hr>
 
-<table class="table">
-  <tr>
-    <th>
+<table class="table table-hover">
+  <thead>
+    
+    <tr>
+    <th scope="col">
       ID
     </th>
 
-    <th>
+    <th scope="col">
       User
     </th>
 
-    <th>
+    <th scope="col">
       Stage #
     </th>
 
-    <th>
+    <th scope="col">
       Name
     </th>
 
-    <th>
+    <th scope="col">
       Number of deals
     </th>
 
-    <th>
+    <th scope="col">
       Total days
     </th>
 
-    <th>
+    <th scope="col">
       Active days
     </th>
 
-    <th>
+    <th scope="col">
       Probability deal closes
     </th>
 
     
-    <th>
+    <th scope="col">
     </th>
   </tr>
-
+</thead>
+<tbody>
   <% @stages.each do |stage| %>
-  <tr>
+  <tr class ="table-light">
     <td>
       <%= stage.id %>
     </td>
@@ -88,4 +91,5 @@
     </td>
   </tr>
   <% end %>
+  </tbody>
 </table>
