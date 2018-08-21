@@ -1,6 +1,7 @@
 class GoalsController < ApplicationController
   def index
-    @goals = Goal.all
+    
+    @goals = current_user.goals
 
     render("goal_templates/index.html.erb")
   end

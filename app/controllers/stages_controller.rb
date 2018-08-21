@@ -1,6 +1,7 @@
 class StagesController < ApplicationController
   def index
-    @stages = Stage.all
+    
+    @stages = current_user.stages
 
     render("stage_templates/index.html.erb")
   end
