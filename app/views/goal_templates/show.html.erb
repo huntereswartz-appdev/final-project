@@ -13,18 +13,11 @@
     Sales goal
   </dt>
   <dd>
-    <%= @goal.sales_goal %>
+    <%= number_to_currency(@goal.sales_goal, precision: 0) %>
   </dd>
 
   <dt>
-    Sales goal period
-  </dt>
-  <dd>
-    <%= @goal.sales_goal_period %>
-  </dd>
-
-  <dt>
-    Period end
+    Period end date
   </dt>
   <dd>
     <%= @goal.period_end %>
@@ -34,14 +27,14 @@
     Average deal size
   </dt>
   <dd>
-    <%= @goal.average_deal_size %>
+    <%= number_to_currency(@goal.average_deal_size, precision: 0) %>
   </dd>
 
   <dt>
     Period closed deal value
   </dt>
   <dd>
-    <%= @goal.period_closed_deal_value %>
+    <%= number_to_currency(@goal.period_closed_deal_value, precision: 0) %>
   </dd>
 
   <dt>
@@ -49,13 +42,6 @@
   </dt>
   <dd>
     <%= @goal.pipeline_stages %>
-  </dd>
-
-  <dt>
-    Created at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@goal.created_at) %> ago
   </dd>
 
   <dt>

@@ -9,26 +9,22 @@
 <hr>
 
 <dl>
-  <dt>
-    User
+  
+<dt>
+    Stage Number
   </dt>
   <dd>
-    <%= @stage.user_id %>
+    <%= @stage.number %>
   </dd>
-
+  
   <dt>
-    Name
+    Stage Name
   </dt>
   <dd>
     <%= @stage.name %>
   </dd>
 
-  <dt>
-    Number
-  </dt>
-  <dd>
-    <%= @stage.number %>
-  </dd>
+  
 
   <dt>
     Number of deals
@@ -58,12 +54,6 @@
     <%= @stage.probability_deal_closes %>
   </dd>
 
-  <dt>
-    Created at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@stage.created_at) %> ago
-  </dd>
 
   <dt>
     Updated at

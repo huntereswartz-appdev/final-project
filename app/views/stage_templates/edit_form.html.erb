@@ -16,17 +16,15 @@
 <form action="/update_stage/<%= @stage.id %>" method="post">
   <!-- Label and input for user_id -->
   <div class="form-group">
-    <label for="user_id">
-      User
-    </label>
+    
 
-    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @stage.user_id %>">
+    <input type="hidden" id="user_id" name="user_id" class="form-control" value="<%= @stage.user_id %>">
   </div>
 
   <!-- Label and input for name -->
   <div class="form-group">
     <label for="name">
-      Name
+      Stage Name
     </label>
 
     <input type="text" id="name" name="name" class="form-control" value="<%= @stage.name %>">
