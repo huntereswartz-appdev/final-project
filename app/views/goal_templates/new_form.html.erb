@@ -18,11 +18,7 @@
 <form action="/create_goal" method="post">
   <!-- Label and input for user_id -->
   <div class="form-group">
-    <label for="user_id">
-      User ID
-    </label>
-
-    <input type="text" id="user_id" name="user_id" class="form-control">
+    <input type="hidden" id="user_id" name="user_id" value = "<%=current_user.id%>">
   </div>
   
   <!-- Label and input for sales_goal -->

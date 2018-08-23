@@ -38,7 +38,7 @@ Rails.application.routes.draw do
 
   #------------------------------
 
-  get("/", { :controller => "stages", :action => "index" })
+  get("/", { :controller => "plan", :action => "index" })
   
   #------------------------------
   

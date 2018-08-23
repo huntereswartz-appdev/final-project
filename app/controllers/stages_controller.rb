@@ -19,7 +19,7 @@ class StagesController < ApplicationController
   def create_row
     @stage = Stage.new
 
-    @stage.user_id = params.fetch("user_id")
+    @stage.user_id = current_user.id
     @stage.name = params.fetch("name")
     @stage.number = params.fetch("number")
     @stage.number_of_deals = params.fetch("number_of_deals")

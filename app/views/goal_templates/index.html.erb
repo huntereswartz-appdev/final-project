@@ -11,13 +11,6 @@
 <table class="table table-hover">
   <thead>
   <tr>
-    <th scope="col">
-      User ID
-    </th>
-    
-    <th scope="col">
-      ID
-    </th>
 
     <th scope="col">
       Sales goal
@@ -50,12 +43,6 @@
 <tbody>
   <% @goals.each do |goal| %>
   <tr class="table-light">
-    <td>
-      <%= goal.user_id %>
-    </td>
-    <td>
-      <%= goal.id %>
-    </td>
 
     <td>
       <%= number_to_currency(goal.sales_goal, precision:0) %>

@@ -17,13 +17,7 @@
 
 <form action="/create_stage" method="post">
   <!-- Label and input for user_id -->
-  <div class="form-group">
-    <label for="user_id">
-      User
-    </label>
-
-    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @stage.try(:user_id) %>">
-  </div>
+  
 
   <!-- Label and input for name -->
   <div class="form-group">

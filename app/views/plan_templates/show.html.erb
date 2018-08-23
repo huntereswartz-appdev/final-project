@@ -1,17 +1,98 @@
-<h1>This is where all of the #math goes</h1>
+<h1>Here is your sales #math</h1>
 
 <body>
-    We took into account the probabilty of a deal moving on to the next stage in your pipeline.  Then we looked at how much active time you spend working on a deal.  While you might only spend 3 to 5 days of total work on a deal, once we take into account the work spent on deals that do not close, we're confident that on average it takes you approximately <%=@deal_time.sum%> days of work to complete a deal
+    We took into account the probabilty of a deal moving on to the next stage in your pipeline.  Then we looked at how much active time you spend working on a deal.  Remember, we're looking at active work, not the total time it takes a deal to go from lead to logo.  We assumed that 1 day of work was an 8 hour day.  
+    <p></p>
+    Once we take into account the time spent on deals that do not close, we're confident that on average it takes you approximately <%=@deal_time.sum.round(1)%> days of work to complete a deal.
 <p></p>
-    There are [XXX] business days remaining in your sales period which means you have time to work on XXX many more deals with a total probabilty weighted deal value of [XXXX]
+    There are <%=@time%> weeks remaining in your sales period which means you have time to work on <%= @remaining_deals%>  more deals worth on average <%=number_to_currency(@remaining_deal_value, precision:0)%>.
+    
 <p></p>
-    Your current pipepline is worth [XXXX].  Based on the number of days left in your period, if you perform as expected then you will achieve [XXX] percent of your sales goal
+    Your current pipepline is worth <%=number_to_currency(@output_pipeline, precision:0)%>.  Based on the number of days left in your period, if you perform as expected, then you will achieve <%=number_to_percentage(@percentage_of_goal*100, precision: 0)%> of your sales goal of <%=number_to_currency(@current_goal.sales_goal, precision: 0)%>.
 <p></p> 
 </body>
 <h2>Ways to Improve</h2> 
 <body>
+    Here is a list of each stage showing the impact of a 25% improvement in closing a deal and a 25% reduction in active time spent.  You can beat your company average close probability or decrease the time you spend at each stage.  
+    
+    <table class="table table-hover">
+  <thead>
+    
+    <tr>
 
+    <th scope="col">
+      Stage #
+    </th>
 
+    <th scope="col">
+      Name
+    </th>
+
+    <th scope="col">
+      Number of deals
+    </th>
+
+    <th scope="col">
+      Total days
+    </th>
+
+    <th scope="col">
+      Active days
+    </th>
+
+    <th scope="col">
+      Probability deal closes
+    </th>
+
+    
+    <th scope="col">
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <% @stages.each do |stage| %>
+  <tr class ="table-light">
+    
+
+    <td>
+      <%= stage.number %>
+    </td>
+
+    <td>
+      <%= stage.name %>
+    </td>
+
+    <td>
+      <%= stage.number_of_deals %>
+    </td>
+
+    <td>
+      <%= stage.total_days %>
+    </td>
+
+    <td>
+      <%= stage.active_days %>
+    </td>
+
+    <td>
+      <%= number_to_percentage(stage.probability_deal_closes*100, precision: 1) %>
+    </td>
+
+    <td>
+      <a href="/stages/<%= stage.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+
+    
+<p></p>
+    If you're able to [X] improvement in the top two stages you can close an extra [ ] in deals.  Or have a [xx] percentage of your deal value
+<p></p> 
+    
 </body>
 
 
